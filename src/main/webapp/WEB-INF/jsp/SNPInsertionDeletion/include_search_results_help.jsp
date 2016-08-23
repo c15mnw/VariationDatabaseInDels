@@ -35,8 +35,14 @@
       <!-- <p>Praesent sed blandit arcu. Duis viverra mattis sollicitudin. Pellentesque orci lorem, convallis ut diam non, sagittis fermentum lorem. Donec aliquam leo ac elit pellentesque ultricies. Donec lacinia at lacus quis pretium. Sed nec tellus vitae lorem semper iaculis. Ut velit odio, euismod et libero ut, dictum viverra velit. Morbi sollicitudin turpis diam, nec auctor nunc pulvinar in. Quisque sit amet dui sit amet nisi convallis condimentum at vitae metus. Maecenas pulvinar molestie vulputate. Morbi et eros accumsan, egestas arcu sed, posuere libero.</p> -->
       <br />
 
-<a id="position"></a>
-<h5>2. "Pos." - Position</h5>
+<a id="positionStart"></a>
+<h5>2. "Start Pos." - Start Co-ordinate</h5>
+      <br />
+      <!-- <p>Praesent sed blandit arcu. Duis viverra mattis sollicitudin. Pellentesque orci lorem, convallis ut diam non, sagittis fermentum lorem. Donec aliquam leo ac elit pellentesque ultricies. Donec lacinia at lacus quis pretium. Sed nec tellus vitae lorem semper iaculis. Ut velit odio, euismod et libero ut, dictum viverra velit. Morbi sollicitudin turpis diam, nec auctor nunc pulvinar in. Quisque sit amet dui sit amet nisi convallis condimentum at vitae metus. Maecenas pulvinar molestie vulputate. Morbi et eros accumsan, egestas arcu sed, posuere libero.</p> -->
+      <br />
+
+<a id="positionEnd"></a>
+<h5>2. "End Pos." - End Co-ordinate</h5>
       <br />
       <!-- <p>Praesent sed blandit arcu. Duis viverra mattis sollicitudin. Pellentesque orci lorem, convallis ut diam non, sagittis fermentum lorem. Donec aliquam leo ac elit pellentesque ultricies. Donec lacinia at lacus quis pretium. Sed nec tellus vitae lorem semper iaculis. Ut velit odio, euismod et libero ut, dictum viverra velit. Morbi sollicitudin turpis diam, nec auctor nunc pulvinar in. Quisque sit amet dui sit amet nisi convallis condimentum at vitae metus. Maecenas pulvinar molestie vulputate. Morbi et eros accumsan, egestas arcu sed, posuere libero.</p> -->
       <br />
@@ -53,34 +59,6 @@
       <!-- <p>Praesent sed blandit arcu. Duis viverra mattis sollicitudin. Pellentesque orci lorem, convallis ut diam non, sagittis fermentum lorem. Donec aliquam leo ac elit pellentesque ultricies. Donec lacinia at lacus quis pretium. Sed nec tellus vitae lorem semper iaculis. Ut velit odio, euismod et libero ut, dictum viverra velit. Morbi sollicitudin turpis diam, nec auctor nunc pulvinar in. Quisque sit amet dui sit amet nisi convallis condimentum at vitae metus. Maecenas pulvinar molestie vulputate. Morbi et eros accumsan, egestas arcu sed, posuere libero.</p> -->
       <br />
 
-<a id="region"></a>
-<h5>5. "Region." - Region</h5>
-      <br />
-      <!--  <p>Praesent sed blandit arcu. Duis viverra mattis sollicitudin. Pellentesque orci lorem, convallis ut diam non, sagittis fermentum lorem. Donec aliquam leo ac elit pellentesque ultricies. Donec lacinia at lacus quis pretium. Sed nec tellus vitae lorem semper iaculis. Ut velit odio, euismod et libero ut, dictum viverra velit. Morbi sollicitudin turpis diam, nec auctor nunc pulvinar in. Quisque sit amet dui sit amet nisi convallis condimentum at vitae metus. Maecenas pulvinar molestie vulputate. Morbi et eros accumsan, egestas arcu sed, posuere libero.</p> -->
-      <br />
-
-<a id="ensemblGeneName"></a>
-<h5>6. "Ensembl Gene" - Ensembl Gene Name</h5>
-      <br />
-      <!--  <p>Praesent sed blandit arcu. Duis viverra mattis sollicitudin. Pellentesque orci lorem, convallis ut diam non, sagittis fermentum lorem. Donec aliquam leo ac elit pellentesque ultricies. Donec lacinia at lacus quis pretium. Sed nec tellus vitae lorem semper iaculis. Ut velit odio, euismod et libero ut, dictum viverra velit. Morbi sollicitudin turpis diam, nec auctor nunc pulvinar in. Quisque sit amet dui sit amet nisi convallis condimentum at vitae metus. Maecenas pulvinar molestie vulputate. Morbi et eros accumsan, egestas arcu sed, posuere libero.</p> -->
-      <br />
-
-<a id="ensemblTranscript"></a>
-<h5>7. "Ensembl Transcript" - Ensembl Transcript</h5>
-      <dl>
-        <dt>NA</dt><dd><!-- ? --></dd>
-        <dt>nonsynonymous SNV</dt><dd><!-- ? --></dd>
-        <dt>synonymous SNV</dt><dd><!-- ? --></dd>
-        <dt>stopgain SNV</dt><dd><!-- ? --></dd>
-        <dt>stoploss SNV</dt><dd><!-- ? --></dd>
-      </dl>
-      <br />
-
-<a id="ensemblCodingPredictions"></a>
-<h5>8. "Ensembl Coding Predictions" - Ensembl Coding Predictions</h5>
-      <br />
-      <!-- <p>Praesent sed blandit arcu. Duis viverra mattis sollicitudin. Pellentesque orci lorem, convallis ut diam non, sagittis fermentum lorem. Donec aliquam leo ac elit pellentesque ultricies. Donec lacinia at lacus quis pretium. Sed nec tellus vitae lorem semper iaculis. Ut velit odio, euismod et libero ut, dictum viverra velit. Morbi sollicitudin turpis diam, nec auctor nunc pulvinar in. Quisque sit amet dui sit amet nisi convallis condimentum at vitae metus. Maecenas pulvinar molestie vulputate. Morbi et eros accumsan, egestas arcu sed, posuere libero.</p> -->
-      <br />
 
 <a id="strainX"></a>
 <h5>9. "Strain X" - </h5>

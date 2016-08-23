@@ -4,11 +4,11 @@
 
 <script> 
 function exampleChromosome() { 
-	var SearchChromosome="CHROMOSOME_3";
+	var SearchChromosome="CHROMOSOME_2";
     document.getElementById("SearchChromosome").value=SearchChromosome; 
-    var searchLowRange=100000; 
+    var searchLowRange=0; 
     document.getElementById("searchLowRange").value=searchLowRange; 
-    var searchHighRange=200000; 
+    var searchHighRange=1000000; 
     document.getElementById("searchHighRange").value=searchHighRange; 
     var searchGeneName=""; 
     document.getElementById("searchGeneName").value=searchGeneName; 

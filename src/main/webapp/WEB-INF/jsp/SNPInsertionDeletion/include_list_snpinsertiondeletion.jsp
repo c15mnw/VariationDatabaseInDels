@@ -8,7 +8,7 @@
       <table class="table table-bordered table-condensed">
         <thead>
 
-          <c:if test="${dtoDownload.isDownloadSortFieldPosition() || dtoDownload.isDownloadSortFieldNone()}">
+          <c:if test="${dtoDownload.isDownloadSortFieldPositionStart() || dtoDownload.isDownloadSortFieldNone()}">
             <tr>
               <td>
                 <spring:message code="snpinsertiondeletion.list.label.chromosomeId"/>                
@@ -19,22 +19,220 @@
               </td>
               <td>
                 <c:if test="${dtoDownload.isDownloadSortDirectionAsc()}">
-                  <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=desc" >
+                  <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=desc" >
                     <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-213-arrow-down.png" alt="DOWN" height="15" width="15">
-                    <spring:message code="snpinsertiondeletion.list.label.position"/>
+                    <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                   </a>
                   <br />
-                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
                     <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                   </a>
                 </c:if>
                 <c:if test="${dtoDownload.isDownloadSortDirectionDesc()}">
-                  <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=asc" >
+                  <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
                     <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
-                    <spring:message code="snpinsertiondeletion.list.label.position"/>
+                    <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                   </a>
                   <br />
-                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                    <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                  </a>
+                </c:if>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionEnd" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=reference&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.reference"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#referenceAllele" target="_blank" data-toggle="tooltip" data-placement="right" title="Reference Allele">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=alternative&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.alternative"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#alternativeAllele" target="_blank" data-toggle="tooltip" data-placement="right" title="Alternative Allele">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <c:if test="${dtoDownload.isDownloadReferenceBreedI() || dtoDownload.isDownloadAlternativeBreedI()}">
+                <td>
+                  <spring:message code="snpinsertiondeletion.list.label.breedIAlleles"/>
+                  <br />
+                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#strainX" target="_blank" data-toggle="tooltip" data-placement="right" title="Breed I">
+                    <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                  </a>
+                </td>
+              </c:if>
+              <c:if test="${dtoDownload.isDownloadReferenceBreedJ() || dtoDownload.isDownloadAlternativeBreedJ()}">
+                <td>
+                  <spring:message code="snpinsertiondeletion.list.label.breedJAlleles"/>
+                  <br />
+                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#strainX" target="_blank" data-toggle="tooltip" data-placement="right" title="Breed J">
+                    <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                  </a>
+                </td>
+              </c:if>
+              <c:if test="${dtoDownload.isDownloadReferenceBreedW() || dtoDownload.isDownloadAlternativeBreedW()}">
+                <td>
+                  <spring:message code="snpinsertiondeletion.list.label.breedWAlleles"/>
+                  <br />
+                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#strainX" target="_blank" data-toggle="tooltip" data-placement="right" title="Breed W">
+                    <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                  </a>
+                </td>
+              </c:if>
+              <c:if test="${dtoDownload.isDownloadReferenceBreedN() || dtoDownload.isDownloadAlternativeBreedN()}">
+                <td>
+                  <spring:message code="snpinsertiondeletion.list.label.breedNAlleles"/>
+                  <br />
+                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#strainX" target="_blank" data-toggle="tooltip" data-placement="right" title="Breed N">
+                    <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                  </a>
+                </td>
+              </c:if>
+              <c:if test="${dtoDownload.isDownloadReferenceBreedL() || dtoDownload.isDownloadAlternativeBreedL()}">
+                <td>
+                  <spring:message code="snpinsertiondeletion.list.label.breedLAlleles"/>
+                  <br />
+                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#strainX" target="_blank" data-toggle="tooltip" data-placement="right" title="Breed L">
+                    <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                  </a>
+                </td>
+              </c:if>
+              <c:if test="${dtoDownload.isDownloadReferenceBreedZ() || dtoDownload.isDownloadAlternativeBreedZ()}">
+                <td>
+                  <spring:message code="snpinsertiondeletion.list.label.breedZAlleles"/>
+                  <br />
+                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#strainX" target="_blank" data-toggle="tooltip" data-placement="right" title="Breed Z">
+                    <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                  </a>
+                </td>
+              </c:if>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=aminoAcidSubs&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.aminoAcidSubs"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#aminoAcidSubsInfo" target="_blank" data-toggle="tooltip" data-placement="right" title="Amino Acid Substitution Information">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=predictionCategory&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.predictionCategory"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#predictionCategory" target="_blank" data-toggle="tooltip" data-placement="right" title="Prediction Category">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=scoreProvean&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.scoreProvean"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#proveanScore" target="_blank" data-toggle="tooltip" data-placement="right" title="PROVEAN Score">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=scoreSift&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.scoreSift"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#siftScore" target="_blank" data-toggle="tooltip" data-placement="right" title="SIFT Score">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=scoreConservation&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.scoreConservation"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#siftConsScore" target="_blank" data-toggle="tooltip" data-placement="right" title="SIFT Conservation Score">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=proteinAlignNumber&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.proteinAlignNumber"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#proteinAlignNum" target="_blank" data-toggle="tooltip" data-placement="right" title="Protein Alignment Number">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=totalAlignSequenceNumber&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.totalAlignSequenceNumber"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#totNumSeqAligned" target="_blank" data-toggle="tooltip" data-placement="right" title="Total Number of Sequence Aligned">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+            </tr>
+          </c:if>
+          
+          <c:if test="${dtoDownload.isDownloadSortFieldPositionEnd()}">
+            <tr>
+              <td>
+                <spring:message code="snpinsertiondeletion.list.label.chromosomeId"/>                
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#chromosomeIdentifier" target="_blank" data-toggle="tooltip" data-placement="right" title="Chromosome Id">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <c:if test="${dtoDownload.isDownloadSortDirectionAsc()}">
+                  <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=desc" >
+                    <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-213-arrow-down.png" alt="DOWN" height="15" width="15">
+                    <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                  </a>
+                  <br />
+                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
+                    <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                  </a>
+                </c:if>
+                <c:if test="${dtoDownload.isDownloadSortDirectionDesc()}">
+                  <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                    <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                    <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                  </a>
+                  <br />
+                  <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
                     <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                   </a>
                 </c:if>
@@ -194,15 +392,24 @@
                 <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#chromosomeIdentifier" target="_blank" data-toggle="tooltip" data-placement="right" title="Chromosome Id">
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                 </a>
-
               </td>
               <td>
-                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=asc" >
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
-                  <spring:message code="snpinsertiondeletion.list.label.position"/>
+                  <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                 </a>
                 <br />
-                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionEnd" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                 </a>
               </td>
@@ -374,12 +581,22 @@
 
               </td>
               <td>
-                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=asc" >
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
-                  <spring:message code="snpinsertiondeletion.list.label.position"/>
+                  <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                 </a>
                 <br />
-                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionEnd" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                 </a>
               </td>
@@ -553,12 +770,22 @@
                 </a>
               </td>
               <td>
-                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=asc" >
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
-                  <spring:message code="snpinsertiondeletion.list.label.position"/>
+                  <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                 </a>
                 <br />
-                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionEnd" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                 </a>
               </td>
@@ -731,12 +958,22 @@
                 </a>
               </td>
               <td>
-                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=asc" >
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
-                  <spring:message code="snpinsertiondeletion.list.label.position"/>
+                  <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                 </a>
                 <br />
-                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionEnd" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                 </a>
               </td>
@@ -909,12 +1146,22 @@
                 </a>
               </td>
               <td>
-                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=asc" >
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
-                  <spring:message code="snpinsertiondeletion.list.label.position"/>
+                  <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                 </a>
                 <br />
-                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionEnd" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                 </a>
               </td>
@@ -1087,12 +1334,22 @@
                 </a>
               </td>
               <td>
-                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=asc" >
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
                     <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
-                  <spring:message code="snpinsertiondeletion.list.label.position"/>
+                  <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                 </a>
                 <br />
-                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionEnd" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                 </a>
               </td>
@@ -1265,12 +1522,22 @@
                 </a>
               </td>
               <td>
-                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=asc" >
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
-                  <spring:message code="snpinsertiondeletion.list.label.position"/>
+                  <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                 </a>
                 <br />
-                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionEnd" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                 </a>
               </td>
@@ -1455,12 +1722,22 @@
                 </a>
               </td>
               <td>
-                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=asc" >
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
-                  <spring:message code="snpinsertiondeletion.list.label.position"/>
+                  <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                 </a>
                 <br />
-                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionEnd" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                 </a>
               </td>
@@ -1633,12 +1910,22 @@
                 </a>
               </td>
               <td>
-                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=position&sortdir=asc" >
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionStart&sortdir=asc" >
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
-                  <spring:message code="snpinsertiondeletion.list.label.position"/>
+                  <spring:message code="snpinsertiondeletion.list.label.positionstart"/>
                 </a>
                 <br />
-                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#position" target="_blank" data-toggle="tooltip" data-placement="right" title="Position">
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionStart" target="_blank" data-toggle="tooltip" data-placement="right" title="Position Start">
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
+                </a>
+              </td>
+              <td>
+                <a href="${pageContext.request.contextPath}/results/1?chr=${dtoDownload.getDownloadChromosomeAsString()}&low=${dtoDownload.downloadLowRange}&high=${dtoDownload.downloadHighRange}&ref=${dtoDownload.getDownloadReferenceAsString()}&alt=${dtoDownload.getDownloadAlternativeAsString()}&sortfield=positionEnd&sortdir=asc" >
+                  <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-214-arrow-up.png" alt="UP" height="15" width="15">
+                  <spring:message code="snpinsertiondeletion.list.label.positionend"/>
+                </a>
+                <br />
+                <a style="color:#5a5a5a;" href="${pageContext.request.contextPath}/search_results_help#positionEnd" target="_blank" data-toggle="tooltip" data-placement="right" title="Position End">
                   <img src="${pageContext.request.contextPath}/static/img/png/glyphicons-196-info-sign.png" alt="Help" height="15" width="15">
                 </a>
               </td>
@@ -1809,7 +2096,10 @@
                 <c:out value="${snpinsertiondeletion.chromosomeId}"/>
               </td>
               <td>
-                <c:out value="${snpinsertiondeletion.position}"/>
+                <c:out value="${snpinsertiondeletion.positionStart}"/>
+              </td>
+              <td>
+                <c:out value="${snpinsertiondeletion.positionEnd}"/>
               </td>
               <td>
                 <c:out value="${snpinsertiondeletion.reference}"/>

@@ -270,6 +270,9 @@ public class ControllerSNPInsertionDeletion extends AbstractController {
                     throw new ExceptionSNPInsertionDeletionLowCoordinateGreaterThanHighCoordinate("ERROR: Search Low Co-ordinate (" + intSearchLow + ") is GREATER THAN Search High Co-ordinate (" + intSearchHigh + ") !!!");
                 }
                 intSearchLowHighDiff = intSearchHigh - intSearchLow;
+
+                //System.out.println("intSearchLowHighDiff : " + intSearchLowHighDiff);
+
                 if ( intSearchLowHighDiff > ONE_MILLION) {
                     throw new ExceptionSNPInsertionDeletionSearchRangeGreaterThanOneMillion("ERROR: Search Range (" + intSearchLowHighDiff + ") is GREATER THAN One Million Base Pairs !!!");
                 }
@@ -361,6 +364,9 @@ public class ControllerSNPInsertionDeletion extends AbstractController {
             else {
 
             	pagesnpchromosome = servicesnpinsertiondeletion.search(dtoSearch, firstPage, dtoSearch.getSearchSortFieldAsString(), dtoSearch.getSearchSortDirectionAsString());
+            	
+             	//System.out.println("pagesnpchromosome.size() : " + pagesnpchromosome.size() );
+
             }
             
         } 
@@ -565,7 +571,7 @@ public class ControllerSNPInsertionDeletion extends AbstractController {
     	RedirectAttributes attributes
     	) {
     	
-    	////System.out.println("getSearchedSNPInsertionDeletionPage");
+    	//System.out.println("getSearchedSNPInsertionDeletionPage");
 
         dtoSearch = new DTOSearchSNPInsertionDeletion();
         
