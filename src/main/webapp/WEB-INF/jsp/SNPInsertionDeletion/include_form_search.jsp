@@ -28,15 +28,15 @@ function exampleGeneName() {
     document.getElementById("searchLowRange").value=searchLowRange; 
     var searchHighRange=""; 
     document.getElementById("searchHighRange").value=searchHighRange; 
-    var searchGeneName="ENSGALG00000008117"; 
+    var searchGeneName="ENSGALG00000001763"; 
     document.getElementById("searchGeneName").value=searchGeneName; 
-    var searchDownStream=400; 
+    var searchDownStream=0; 
     document.getElementById("searchDownStream").value=searchDownStream; 
-    var searchUpStream=600; 
+    var searchUpStream=0; 
     document.getElementById("searchUpStream").value=searchUpStream; 
 	var SearchReferenceBreed="BREED_I";
     document.getElementById("SearchReferenceBreed").value=SearchReferenceBreed; 
-	var SearchAlternativeBreed="BREED_N";
+	var SearchAlternativeBreed="BREED_L";
     document.getElementById("SearchAlternativeBreed").value=SearchAlternativeBreed; 
 } 
 </script>
@@ -180,12 +180,12 @@ $("#searchGeneName").autocomplete("${pageContext.request.contextPath}/getEnsembl
             
             <form:select path="SearchReferenceBreed">
                 <form:option value="BREED_NONE"><spring:message code="SearchReferenceBreed.BREED_NONE"/></form:option>
-                <form:option value="BREED_P"><spring:message code="SearchReferenceBreed.BREED_P"/></form:option>
-                <form:option value="BREED_W"><spring:message code="SearchReferenceBreed.BREED_W"/></form:option>
-                <form:option value="BREED_N"><spring:message code="SearchReferenceBreed.BREED_N"/></form:option>
                 <form:option value="BREED_I"><spring:message code="SearchReferenceBreed.BREED_I"/></form:option>
+                <form:option value="BREED_J"><spring:message code="SearchReferenceBreed.BREED_J"/></form:option>
+                <form:option value="BREED_L"><spring:message code="SearchReferenceBreed.BREED_L"/></form:option>
+                <form:option value="BREED_N"><spring:message code="SearchReferenceBreed.BREED_N"/></form:option>
+                <form:option value="BREED_W"><spring:message code="SearchReferenceBreed.BREED_W"/></form:option>
                 <form:option value="BREED_Z"><spring:message code="SearchReferenceBreed.BREED_Z"/></form:option>
-                <form:option value="BREED_C"><spring:message code="SearchReferenceBreed.BREED_C"/></form:option>
             </form:select>
                 </div><!-- close spacer --> 
 
@@ -230,12 +230,12 @@ $("#searchGeneName").autocomplete("${pageContext.request.contextPath}/getEnsembl
             
             <form:select path="SearchAlternativeBreed">
                 <form:option value="BREED_NONE"><spring:message code="SearchAlternativeBreed.BREED_NONE"/></form:option>
-                <form:option value="BREED_P"><spring:message code="SearchAlternativeBreed.BREED_P"/></form:option>
-                <form:option value="BREED_W"><spring:message code="SearchAlternativeBreed.BREED_W"/></form:option>
-                <form:option value="BREED_N"><spring:message code="SearchAlternativeBreed.BREED_N"/></form:option>
                 <form:option value="BREED_I"><spring:message code="SearchAlternativeBreed.BREED_I"/></form:option>
+                <form:option value="BREED_J"><spring:message code="SearchAlternativeBreed.BREED_J"/></form:option>
+                <form:option value="BREED_L"><spring:message code="SearchAlternativeBreed.BREED_L"/></form:option>
+                <form:option value="BREED_N"><spring:message code="SearchAlternativeBreed.BREED_N"/></form:option>
+                <form:option value="BREED_W"><spring:message code="SearchAlternativeBreed.BREED_W"/></form:option>
                 <form:option value="BREED_Z"><spring:message code="SearchAlternativeBreed.BREED_Z"/></form:option>
-                <form:option value="BREED_C"><spring:message code="SearchAlternativeBreed.BREED_C"/></form:option>
             </form:select>
                 </div>
 
