@@ -5,8 +5,8 @@
     <artifactId>VariationDatabaseInDels</artifactId>
     <packaging>war</packaging>
     <version>1.0.0</version>
-    <name>Variation Database Search Facility - Insertion Deletions</name>
-    <description>Variation Database Search Facility - Insertion Deletions</description>
+    <name>Variation Database InDels Search Facility</name>
+    <description>Variation Database InDels Search Facility</description>
     
     <licenses>
         <license>

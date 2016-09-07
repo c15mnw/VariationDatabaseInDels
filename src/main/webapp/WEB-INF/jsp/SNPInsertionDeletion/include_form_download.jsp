@@ -12,10 +12,6 @@
 
     <fieldset>
     
-        <div id="legend1" onclick="document.getElementById('downloadform1').style.display= 'initial';">
-        <legend><spring:message code="snpinsertiondeletion.download.form.legend"/></legend>
-        </div>
-        
         <input type="hidden" id="downloadChromosome" name="downloadChromosome" value="${dtoDownload.downloadChromosome}" />
         <input type="hidden" id="downloadLowRange" name="downloadLowRange" value="${dtoDownload.downloadLowRange}" />
         <input type="hidden" id="downloadHighRange" name="downloadHighRange" value="${dtoDownload.downloadHighRange}" />
@@ -34,6 +30,11 @@
         <input type="hidden" id="downloadFilterTotalNumberSeqAligned" name="downloadFilterTotalNumberSeqAligned" value="${dtoDownload.downloadFilterTotalNumberSeqAligned}" />
         <input type="hidden" id="downloadFilterProveanScore" name="downloadFilterProveanScore" value="${dtoDownload.downloadFilterProveanScore}" />
 
+        <input type="button" value="Show/Hide Download Options" name="no" onclick="toggle_visibility('downloadform1')">
+        
+        <br />
+        <hr>
+        
         <div id="downloadform1" style="display: none;">
         
         <div class="row">
@@ -161,13 +162,15 @@
   
         </div><!-- close row -->
 
-        <div class="row spacer">
+        <div class="row">
             <div class="span12">
                 <input type="submit" value="<spring:message code="snpinsertiondeletion.download.form.submit.label"/>"/>
             </div><!-- close span12 -->
         </div><!-- close row spacer -->
         
-        </div> 
+        <hr>
+        
+        </div><!-- close downloadform1 -->
         
     </fieldset>
     
