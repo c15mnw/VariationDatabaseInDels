@@ -1,6 +1,7 @@
 language: java
 
 before_install:
+     - mvn validate
 
 sudo: false
 script: mvn clean install
