@@ -70,8 +70,6 @@ public class ControllerSNPInsertionDeletion extends AbstractController {
     
     private static final Logger LOGGER = LoggerFactory.getLogger(ControllerSNPInsertionDeletion.class);
     
-    private static final int NUMBER_OF_SNPCHROMOSOMES_ALL = 300000;
-    
     protected static final String FEEDBACK_MESSAGE_KEY_SEARCH_RESULTS_SINGLE = "feedback.message.search.results.single";
     protected static final String FEEDBACK_MESSAGE_KEY_SEARCH_RESULTS_MULTIPLE = "feedback.message.search.results.multiple";
 
@@ -118,7 +116,7 @@ public class ControllerSNPInsertionDeletion extends AbstractController {
     
     protected static final String REQUEST_MAPPING_LIST = "";
 
-    protected static final int ONE_MILLION = 1000000;
+    protected static final int ONE_HUNDRED_MILLION = 100000000;
     protected static final int TEN_THOUSAND = 10000;
 
     private static final String FLASH_ERROR_MESSAGE = "errorMessage";
@@ -273,8 +271,8 @@ public class ControllerSNPInsertionDeletion extends AbstractController {
 
                 //System.out.println("intSearchLowHighDiff : " + intSearchLowHighDiff);
 
-                if ( intSearchLowHighDiff > ONE_MILLION) {
-                    throw new ExceptionSNPInsertionDeletionSearchRangeGreaterThanOneMillion("ERROR: Search Range (" + intSearchLowHighDiff + ") is GREATER THAN One Million Base Pairs !!!");
+                if ( intSearchLowHighDiff > ONE_HUNDRED_MILLION) {
+                    throw new ExceptionSNPInsertionDeletionSearchRangeGreaterThanOneMillion("ERROR: Search Range (" + intSearchLowHighDiff + ") is GREATER THAN One Hundred Million Base Pairs !!!");
                 }
         	}
         	else {
@@ -455,7 +453,7 @@ public class ControllerSNPInsertionDeletion extends AbstractController {
             return createRedirectViewPath(REQUEST_MAPPING_LIST);
         }
         catch (ExceptionSNPInsertionDeletionSearchRangeGreaterThanOneMillion e) {
-        	LOGGER.debug("ERROR: Search Range is GREATER THAN One Million Base Pairs !!!");
+        	LOGGER.debug("ERROR: Search Range is GREATER THAN One Hundred Million Base Pairs !!!");
             addErrorMessage(attributes, ERROR_MESSAGE_SEARCH_ONE_MILLION_BASE_PAIRS);
             model.addAttribute(MODEL_ATTRIBUTE_SEARCHCRITERIA, pagesnpchromosome);
             return createRedirectViewPath(REQUEST_MAPPING_LIST);
@@ -549,95 +547,6 @@ public class ControllerSNPInsertionDeletion extends AbstractController {
             else {
                 model.addAttribute("feedbackMessage", addFeedbackMessageAsString(FEEDBACK_MESSAGE_KEY_SEARCH_RESULTS_MULTIPLE, pagesnpchromosome.getTotalElements()));
             }
-        }
-
-        return SNPCHROMOSOME_SEARCH_RESULT_VIEW;
-    }
-    
-
-	@RequestMapping(value = "/results/{pageNumber}", method = RequestMethod.GET)
-	public String getSearchedSNPInsertionDeletionPage(
-    	@PathVariable Integer pageNumber, 
-    	@RequestParam(value = "chr", required = true) String chr,
-    	@RequestParam(value = "low", required = true) String low,
-    	@RequestParam(value = "high", required = true) String high,
-    	@RequestParam(value = "ref", required = true) String ref,
-    	@RequestParam(value = "alt", required = true) String alt,
-    	@RequestParam(value = "sortfield", required = false) String sortfield,
-    	@RequestParam(value = "sortdir", required = false) String sortdir,
-    	@ModelAttribute(MODEL_ATTRIBUTE_SEARCHCRITERIA) DTOSearchSNPInsertionDeletion dtoSearch,
-    	@ModelAttribute(MODEL_ATTRIBUTE_DOWNLOADCRITERIA) DTODownloadSNPInsertionDeletion dtoDownload,
-    	Model model, 
-    	RedirectAttributes attributes
-    	) {
-    	
-    	//System.out.println("getSearchedSNPInsertionDeletionPage");
-
-        dtoSearch = new DTOSearchSNPInsertionDeletion();
-        
-        dtoSearch.setPageIndex(pageNumber);
-        dtoSearch.setSearchChromosome(chr);
-        dtoSearch.setSearchLowRange(low);
-        dtoSearch.setSearchHighRange(high);
-        dtoSearch.setSearchReferenceBreed(ref);
-        dtoSearch.setSearchAlternativeBreed(alt);
-        dtoSearch.setSearchSortDirection(sortdir);
-        dtoSearch.setSearchSortField(sortfield);
-
-        PageSNPInsertionDeletion pagesnpchromosome = servicesnpinsertiondeletion.search(dtoSearch, pageNumber, dtoSearch.getSearchSortFieldAsString(), dtoSearch.getSearchSortDirectionAsString());
-
-        if ( pagesnpchromosome == null ) {
-        	
-            LOGGER.debug("EMPTY SNPInsertionDeletions !!! ");
-            model.addAttribute("feedbackMessage", addFeedbackMessageAsString(FEEDBACK_MESSAGE_KEY_SEARCH_RESULTS_MULTIPLE, 0));
-        }
-        else {
-        	
-            if ( pagesnpchromosome.getTotalElements() == 1 ) {
-            	
-                model.addAttribute("feedbackMessage", addFeedbackMessageAsString(FEEDBACK_MESSAGE_KEY_SEARCH_RESULTS_SINGLE, pagesnpchromosome.getTotalElements()));
-            }
-            else {
-            	
-                model.addAttribute("feedbackMessage", addFeedbackMessageAsString(FEEDBACK_MESSAGE_KEY_SEARCH_RESULTS_MULTIPLE, pagesnpchromosome.getTotalElements()));
-            }
-            
-        	//pagesnpchromosome
-            int current = pagesnpchromosome.getPageNumber();
-            int begin = Math.max(1, current - 5);
-            int end = Math.min(begin + 10, pagesnpchromosome.getTotalPages());
-            int totalPages = pagesnpchromosome.getTotalPages();
-
-            model.addAttribute("SNPInsertionDeletion", pagesnpchromosome);
-            model.addAttribute("beginIndex", begin);
-            model.addAttribute("endIndex", end);
-            model.addAttribute("currentIndex", current);
-            model.addAttribute("totalPages", totalPages);
-
-            dtoDownload = new DTODownloadSNPInsertionDeletion();
-            
-            dtoDownload.setDownloadChromosome(dtoSearch.getSearchChromosome());
-            dtoDownload.setDownloadLowRange(dtoSearch.getSearchLowRange());
-            dtoDownload.setDownloadHighRange(dtoSearch.getSearchHighRange());
-            dtoDownload.setDownloadReference(dtoSearch.getSearchReferenceBreed());
-            dtoDownload.setDownloadAlternative(dtoSearch.getSearchAlternativeBreed());
-
-            dtoDownload.setDownloadFilterSiftScoreValue(dtoSearch.getSearchFilterSiftScoreValue());
-            dtoDownload.setDownloadFilterSiftConservationScoreValue(dtoSearch.getSearchFilterSiftConservationScoreValue());
-            dtoDownload.setDownloadFilterProteinAlignNumberValue(dtoSearch.getSearchFilterProteinAlignNumberValue());
-            dtoDownload.setDownloadFilterTotalNumberSeqAlignedValue(dtoSearch.getSearchFilterTotalNumberSeqAlignedValue());
-            dtoDownload.setDownloadFilterProveanScoreValue(dtoSearch.getSearchFilterProveanScoreValue());
-            dtoDownload.setDownloadFilterSiftScore(dtoSearch.getSearchFilterSiftScore());
-            dtoDownload.setDownloadFilterSiftConservationScore(dtoSearch.getSearchFilterSiftConservationScore());
-            dtoDownload.setDownloadFilterProteinAlignNumber(dtoSearch.getSearchFilterProteinAlignNumber());
-            dtoDownload.setDownloadFilterTotalNumberSeqAligned(dtoSearch.getSearchFilterTotalNumberSeqAligned());
-            dtoDownload.setDownloadFilterProveanScore(dtoSearch.getSearchFilterProveanScore());
-
-            dtoDownload.setDownloadSortDirection(dtoSearch.getSearchSortDirection());
-            dtoDownload.setDownloadSortField(dtoSearch.getSearchSortField());
-
-            model.addAttribute(MODEL_ATTRIBUTE_SEARCHCRITERIA, dtoSearch);
-            model.addAttribute(MODEL_ATTRIBUTE_DOWNLOADCRITERIA, dtoDownload);
         }
 
         return SNPCHROMOSOME_SEARCH_RESULT_VIEW;

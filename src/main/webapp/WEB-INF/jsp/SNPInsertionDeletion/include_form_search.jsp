@@ -246,8 +246,6 @@ $("#searchGeneName").autocomplete("${pageContext.request.contextPath}/getEnsembl
         </div><!-- close row spacer -->
 
 
-        </div><!-- close filterform1 -->
-
     </fieldset>
     
 </form:form>

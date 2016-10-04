@@ -13,7 +13,14 @@
 
 <!-- Stylesheets
 ================ -->
-<link href="${pageContext.request.contextPath}/static/css/indels.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+<style type="text/css" class="init">
+	
+	div.container {
+		width: 80%;
+	}
+
+</style>    
 <link href="${pageContext.request.contextPath}/static/css/bootstrap.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/static/css/docs.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/static/css/jquery.autocomplete.css" rel="stylesheet">
@@ -37,11 +44,18 @@
 
 <!-- Javascripts
 ================ -->
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" class="init">
+$(document).ready(function() {
+    $('#indels').DataTable( {
+        "scrollX": true
+    } );
+} );
+</script>
 <script src="${pageContext.request.contextPath}/static/js/custom/toggle.js" ></script>
-<script src="${pageContext.request.contextPath}/static/js/jquery.min.js" ></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery.autocomplete.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
-
 <style>
         input {
             font-size: 120%;
@@ -83,8 +97,6 @@
     <jsp:include page="include_messages.jsp"/>
 
     <jsp:include page="include_form_download.jsp"/>
-
-    <jsp:include page="include_pagination_search_results.jsp"/>
 
     <jsp:include page="include_list_snpinsertiondeletion.jsp"/>
 
