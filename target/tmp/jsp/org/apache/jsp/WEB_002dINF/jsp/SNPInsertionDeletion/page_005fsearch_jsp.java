@@ -111,6 +111,9 @@ public final class page_005fsearch_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("================ -->\n");
       out.write("<script src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("/static/js/custom/toggle.js\" ></script>\n");
+      out.write("<script src=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/static/js/custom/search-example.js\" ></script>\n");
       out.write("<script src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -175,6 +178,10 @@ public final class page_005fsearch_jsp extends org.apache.jasper.runtime.HttpJsp
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include_form_search.jsp", out, false);
       out.write("\n");
       out.write("      \n");
+      out.write("        ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include_form_upload.jsp", out, false);
+      out.write("\n");
+      out.write("\n");
       out.write("      </div><!-- close span12 -->    \n");
       out.write("    </div><!-- close row --> \n");
       out.write("\n");
